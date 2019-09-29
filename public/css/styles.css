@@ -1,0 +1,10 @@
+.post-container {
+    min-height: 80vh;
+}
+.footer-text {
+    color: #fff !important;
+}
+.navbar-bg {
+    background: #333;
+    color:#fff;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Runos Blog | All posts</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+  {{>header}}
+    <div class="container">
+
+        <div class="jumbotron my-3">
+            <h1 class="text-center">All Posts</h1>
+            <h4 class="text-center">Page {{page}} of 10</h4>
+        </div>
+ 
+   <div class="post_list mx-auto">
+  {{#each posts}}
+     <div class="card my-2">
+      <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <a href="posts/{{this.id}}" class="btn btn-primary">See post</a>
+      </div>
+    </div>
+  {{/each}}
+   </div>
+    
+      <div class="text-center mx-auto my-5">
+          {{#if_eq page 1}}
+     <a href="/posts?page={{minus page 1}}" class="btn btn-dark mx-3">Prev</a>
+      {{/if_eq}}
+
+       {{#if_eq page 10}}
+       <a href="/posts?page={{add page 1}}" class="btn btn-dark mx-3">Next</a>
+      {{/if_eq}}
+
+      
+      </div>
+    
+   </div>
+   {{>footer}}
+   
+</body>
+</html>
